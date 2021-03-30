@@ -7,7 +7,7 @@
           integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
 <body>
-<h1>Bienvenu sur MeetMock</h1>
+<h1>Bienvenue sur MeetMock</h1>
 
 <div>Enregistrez-vous ci-dessous pour trouver l'amour !</div>
 <div class="container mt-5 border border-3 rounded bg-light">
@@ -80,9 +80,10 @@
         var xhr = new XMLHttpRequest();
         xhr.open(form.method, form.action, true);
         xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+        xhr.onreadystatechange = () => {
+            document.location.href = "/home.html?name=" + encodeURIComponent(formData.userName) + "&country=" + encodeURIComponent(formData.userCountry);
+        };
         xhr.send(JSON.stringify(formData));
-
-        document.location.href = "/home.html?name=" + encodeURIComponent(formData.userName) + "&country=" + encodeURIComponent(formData.userCountry);
     }
 
     document.getElementById('inscription').onsubmit = function() {
