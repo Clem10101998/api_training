@@ -7,12 +7,12 @@ import org.springframework.util.Assert;
 
 class TotoTest {
 
-    private final Toto toto = new Toto("loli", "lolito");
+    private final Toto toto = new Toto("", "");
+    private final Toto titi = new Toto("Coco", "cocorico");
 
     @Test
     void super_test(){
-        //assertEquals("loli", "loli");
-        System.out.println(toto);
+        assertNotSame(toto, titi);
     }
 
 
