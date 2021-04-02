@@ -12,6 +12,4 @@ class UserInfoTest {
     void super_test(){
         assertNotSame(userInfo1, userInfo2);
     }
-
-
 }
